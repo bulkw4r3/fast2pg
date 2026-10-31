@@ -1,0 +1,13 @@
+services:
+  fast2pg:
+    build: .
+    ports:
+      - "5001:5001"
+    environment:
+      PORT: "5001"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  pgdata:
